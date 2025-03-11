@@ -1,0 +1,16 @@
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int freeIdx = 0; // указывает на какую позицию ставим следующий элемент не равный 0
+        for (int num : nums) {
+            if (num != 0) {
+                nums[freeIdx] = num;
+                freeIdx++;
+            }
+        }
+
+        for (int i = freeIdx; i < nums.length; i++) {
+            nums[i] = 0;
+        }
+    }
+}
+
